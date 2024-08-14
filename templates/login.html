@@ -1,0 +1,43 @@
+{% extends 'layout/base.html' %}
+
+
+{% block css %}
+<style>
+    body{
+        background-color:rgb(203, 192, 213);
+        
+    }
+</style>
+{% endblock css %}
+    
+
+{% block content %}
+
+    <div class="container-fluid h d-flex justify-content-center align-items-center vh-100">
+        <div class="card w-25 h-50  ">
+<div class="card-header bg-black  ">
+<h2 class="text-centre text-white">login</h2>
+
+</div>
+<div class="card-body">
+    <form method="post">
+        {% csrf_token %}
+        <label class="pass text-dark"> Username</label>
+        <input type="text" class="form-control  mt-3" name="username" id="name" placeholder="enter your username">
+        <label class="pass mt-3 text-dark">password</label>
+        <input type="password" class="form-control mt-3" name="password" id="password"  placeholder="enter your password">
+        <button class="btn btn-primary mt-3 mx-auto d-block">log in</button>
+        <a href="{% url 'register' %}">create account</a>
+
+    </form>
+
+</div>
+        </div>
+
+    </div>
+
+{% endblock content %}
+    
+
+
+

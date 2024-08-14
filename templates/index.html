@@ -1,0 +1,35 @@
+
+    {% extends 'layout/base.html' %}
+
+    
+    {% block css %}
+    <style>
+        main{
+            display: grid;
+            height: 100vh;
+            place-items:center;
+        }
+    </style>
+    {% endblock css %}
+        
+    
+    {% block content %}
+        <div class="container text-center">
+            <h1 class="display-1">TRAVEL BLOG</h1>
+            
+            {% if user.is_authenticated %}
+            <h3>Welcome {{user.username}} </h3>   
+            <a class="btn btn-outline-danger" href="{% url 'logout' %}">logout</a>
+            {% else %}
+            <a class="btn btn-outline-dark" href="{% url 'register' %}">register</a>
+            <a class="btn btn-outline-dark" href="{% url 'login' %}">login</a>
+            {% endif %}
+                
+        </div>
+    {% endblock content %}
+        
+
+    
+        
+        
+            
